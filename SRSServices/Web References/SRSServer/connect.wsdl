@@ -1,0 +1,2927 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RequestInput">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientTxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dProductPrice" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDealerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOtherParameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestInputResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestInputResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestTopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientTxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dProductPrice" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDealerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOtherParameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestTopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestTopupResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dBalance" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckBalanceResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="dBalance" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTransactionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientTxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTransactionStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTransactionErrorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTransactionDNReceivedID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTransactionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckTransactionStatusResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTransactionStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTransactionErrorCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTransactionDNReceivedID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTransactionStatusBatch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="olTS" type="tns:ArrayOfTransactionStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTransactionStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TransactionStatus" nillable="true" type="tns:TransactionStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TransactionStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ClientTxID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionStatus2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionErrorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResponseStatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionDNReceivedID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadTelco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadMSISDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrentRetry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckTransactionStatusBatchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTransactionStatusBatchResult" type="tns:ArrayOfTransactionStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dProductPrice" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDealerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOtherParameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSoftPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RequestPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RequestPINResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSoftPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductName" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductDenomination" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductDescription" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductInstruction" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductStatus" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProductResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductName" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductDenomination" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductDescription" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductInstruction" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductStatus" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductObjectResult" type="tns:ArrayOfProductInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductInfo" nillable="true" type="tns:ProductInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Keyword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Denomination" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DenominationDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Instruction" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobileLength" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sorting" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAgentProductDiscount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentProductDiscountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentProductDiscountResult" type="tns:ArrayOfAgentProductDiscount" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAgentProductDiscount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgentProductDiscount" nillable="true" type="tns:AgentProductDiscount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgentProductDiscount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DiscountRate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastUpdated" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAgentProductRebate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentProductRebateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentProductRebateResult" type="tns:ArrayOfAgentProductRebate" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAgentProductRebate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgentProductRebate" nillable="true" type="tns:AgentProductRebate" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgentProductRebate">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Denomination" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RebateType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RebateRate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastUpdated" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetRecentTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadNumber" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadAmount" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDN" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRecentTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetRecentTransactionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadNumber" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadAmount" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDN" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDeviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bVerifyTac" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMasterID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMerchantName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeviceLoginResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bVerifyTac" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMasterID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMerchantName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceVerifyTAC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDeviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTAC" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeviceVerifyTACResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeviceVerifyTACResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCustomerStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProduct" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDN" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCustomerStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckCustomerStatusResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProduct" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDN" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCode" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCustomerTxStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCustomerTxStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCustomerTxStatusResult" type="tns:ArrayOfCustomerTxStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCustomerTxStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerTxStatus" nillable="true" type="tns:CustomerTxStatus" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerTxStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="LocalMOID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Product" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RetailPrice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sReloadMSISDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Retry" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegisterDealer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLocation" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReferrer" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterDealerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RegisterDealerResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FBLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FBName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FBID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FBEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMSISDN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bTACverified" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FBLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FBLoginResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMSISDN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bTACverified" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FBUpdateFBID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sFBID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FBUpdateFBIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FBUpdateFBIDResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FBUpdateMSISDN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FBID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FBMsisdn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bTACverified" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FBUpdateMSISDNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FBUpdateMSISDNResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bTACverified" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInput">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dProductPrice" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDealerMobileNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOtherParameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTicketNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInputResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerInputResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTicketNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInputList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sListType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInputListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerInputListResult" type="tns:ArrayOfCustomerInputList" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCustomerInputList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerInputList" nillable="true" type="tns:CustomerInputList" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerInputList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="TxID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductPrice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerAccountNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerMobileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TicketNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CustomerInputApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInputApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CustomerInputApproveResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTxID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentSales">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentSalesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentSalesResult" type="tns:ArrayOfAgentSales" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAgentSales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgentSales" nillable="true" type="tns:AgentSales" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgentSales">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalSales" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalProfit" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAgentSalesProfit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentSalesProfitResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentSalesProfitResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMessageType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetMessageInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LoginChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGPSLocation" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LogLoginResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReloadPIN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLocalMOID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sExpiryDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPurchaseTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPINID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRetailPrice" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReloadPINResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReloadPINResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sExpiryDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPurchaseTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPINID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRetailPrice" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReloadPINImmediate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLocalMOID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sExpiryDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDNReceivedID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBatchID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetReloadPINImmediateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetReloadPINImmediateResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSerialNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadPin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sExpiryDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDNReceivedID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBatchID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintReceipt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLocalMOID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReferenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProcessTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintReceiptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrintReceiptResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReferenceNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProcessTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sInstruction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSoftPin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDeviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckSoftPinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckSoftPinResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProduct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReloadSoftPin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sDeviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadMSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReloadSoftPinResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ReloadSoftPinResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sNewPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ChangePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePushNotificationID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPNID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sChannel" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePushNotificationIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePushNotificationIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitBankIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBank" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitBankInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitBankInResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitBankInBiCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sBank" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sbiCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitBankInBiCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitBankInBiCodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitServiceRegistration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientMessageTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProductName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMobileNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sICNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSIMSerialNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDOB" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark4" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitServiceRegistrationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SubmitServiceRegistrationResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServerKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAgentServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAgentServerResult" type="tns:AgentServerObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="AgentServerObj">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ServerID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bank1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bank2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bank3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Account3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GCM_Sender_ID" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Allow_PN" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Server_Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Helpline" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AppIconURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Color" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MOMobileNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="IOSEnable" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetExChangeRateById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="mId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetExChangeRateByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetExChangeRateByIdResult" type="tns:ExchangeRateObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ExchangeRateObj">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="mID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocalAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForeignCountry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ForeignCurrency" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ForeignAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastUpdated" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="Created" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertMobileMoneymessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="mobileMoneyMessageObj" type="tns:MobileMoneyMessageObj" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="MobileMoneyMessageObj">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="MID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="sMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MessageStatus" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CreatedDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="AgentId" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InsertMobileMoneymessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertMobileMoneymessageResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPinTxByDN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerAccount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDNId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPinTxByDNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPinTxByDNResult" type="tns:CustomerTxStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataToReload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRobin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDataToReloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDataToReloadResult" type="tns:ArrayOfDataToReload" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDataToReload">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DataToReload" nillable="true" type="tns:DataToReload" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DataToReload">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GUID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocalMOId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadMSISDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Retry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReloadTelco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentMSISDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerPrice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AgentID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateDataReload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadTelco" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sGUID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLocalMOID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDNMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadMSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReloadAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEloadBalance" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msSIMCardID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentMSISDN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerPrice" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOtherParameter" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDataReloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDataReloadResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhatAppsInput">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientMessageIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientMessageTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRemark" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sOtherParameter" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReplyMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhatAppsInputResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WhatAppsInputResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sReplyMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhatAppsOutput">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WhatAppsOutputResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WhatAppsOutputResult" type="tns:ArrayOfTxOut" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTxOut">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TxOut" nillable="true" type="tns:TxOut" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TxOut">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MsgID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgMSISDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgTS" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBankInList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBankInListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBankInListResult" type="tns:ArrayOfBankIn" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfBankIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BankIn" nillable="true" type="tns:BankIn" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BankIn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Bank" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DateBI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="RecipientReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Created" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdatePrintCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sLocalMOID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePrintCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePrintCountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sRecipientMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMessageBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendSMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SendSMSResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBalanceExtra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sCustomerMobile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDealerID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sMachineID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDateStart" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDateEnd" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dBalance" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckBalanceExtraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckBalanceExtraResult" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="dBalance" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBalanceExtra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dBalance" type="s:decimal" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBalanceExtraResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBalanceExtraResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseStatus" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckProgramValidity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sProgramVersion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProgramOwner" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProgramID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckProgramValidityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckProgramValidityResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClaimSRSPINServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sServerKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPINnumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sDeviceID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sIPAddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ClaimSRSPINServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ClaimSRSPINServerResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sResponseMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessorInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sProcessorID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSIMCardID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPasscode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sModemPort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProcessorInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetProcessorInfoResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="sSIMCardID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sPasscode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sModemPort" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTxOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sTS" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEncKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sAgentID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sEndDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTxOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTxOutResult" type="tns:ArrayOfTxOut" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageInfoList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sClientUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sClientPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessageInfoListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessageInfoListResult" type="tns:ArrayOfMessageInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMessageInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="MessageInfo" nillable="true" type="tns:MessageInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MessageInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MsgType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgContent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MsgFee" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RequestInputSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestInput" />
+  </wsdl:message>
+  <wsdl:message name="RequestInputSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestInputResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestTopupSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestTopup" />
+  </wsdl:message>
+  <wsdl:message name="RequestTopupSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestTopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckBalance" />
+  </wsdl:message>
+  <wsdl:message name="CheckBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransactionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransactionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransactionStatusBatchSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTransactionStatusBatch" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransactionStatusBatchSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTransactionStatusBatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="RequestPINSoapIn">
+    <wsdl:part name="parameters" element="tns:RequestPIN" />
+  </wsdl:message>
+  <wsdl:message name="RequestPINSoapOut">
+    <wsdl:part name="parameters" element="tns:RequestPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductObject" />
+  </wsdl:message>
+  <wsdl:message name="GetProductObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentProductDiscountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentProductDiscount" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentProductDiscountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentProductDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentProductRebateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentProductRebate" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentProductRebateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentProductRebateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRecentTransaction" />
+  </wsdl:message>
+  <wsdl:message name="GetRecentTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRecentTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:DeviceLogin" />
+  </wsdl:message>
+  <wsdl:message name="DeviceLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:DeviceLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeviceVerifyTACSoapIn">
+    <wsdl:part name="parameters" element="tns:DeviceVerifyTAC" />
+  </wsdl:message>
+  <wsdl:message name="DeviceVerifyTACSoapOut">
+    <wsdl:part name="parameters" element="tns:DeviceVerifyTACResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCustomerStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCustomerStatus" />
+  </wsdl:message>
+  <wsdl:message name="CheckCustomerStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCustomerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCustomerTxStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCustomerTxStatus" />
+  </wsdl:message>
+  <wsdl:message name="CheckCustomerTxStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCustomerTxStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterDealerSoapIn">
+    <wsdl:part name="parameters" element="tns:RegisterDealer" />
+  </wsdl:message>
+  <wsdl:message name="RegisterDealerSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterDealerResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:FBLogin" />
+  </wsdl:message>
+  <wsdl:message name="FBLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:FBLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBUpdateFBIDSoapIn">
+    <wsdl:part name="parameters" element="tns:FBUpdateFBID" />
+  </wsdl:message>
+  <wsdl:message name="FBUpdateFBIDSoapOut">
+    <wsdl:part name="parameters" element="tns:FBUpdateFBIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="FBUpdateMSISDNSoapIn">
+    <wsdl:part name="parameters" element="tns:FBUpdateMSISDN" />
+  </wsdl:message>
+  <wsdl:message name="FBUpdateMSISDNSoapOut">
+    <wsdl:part name="parameters" element="tns:FBUpdateMSISDNResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInputSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerInput" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInputSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerInputResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInputListSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerInputList" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInputListSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerInputListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInputApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerInputApprove" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInputApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerInputApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentSalesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentSales" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentSalesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentSalesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentSalesProfitSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentSalesProfit" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentSalesProfitSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentSalesProfitResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:LogLogin" />
+  </wsdl:message>
+  <wsdl:message name="LogLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LogLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReloadPINSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReloadPIN" />
+  </wsdl:message>
+  <wsdl:message name="GetReloadPINSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReloadPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetReloadPINImmediateSoapIn">
+    <wsdl:part name="parameters" element="tns:GetReloadPINImmediate" />
+  </wsdl:message>
+  <wsdl:message name="GetReloadPINImmediateSoapOut">
+    <wsdl:part name="parameters" element="tns:GetReloadPINImmediateResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintReceiptSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintReceipt" />
+  </wsdl:message>
+  <wsdl:message name="PrintReceiptSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintReceiptResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckSoftPinSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckSoftPin" />
+  </wsdl:message>
+  <wsdl:message name="CheckSoftPinSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckSoftPinResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReloadSoftPinSoapIn">
+    <wsdl:part name="parameters" element="tns:ReloadSoftPin" />
+  </wsdl:message>
+  <wsdl:message name="ReloadSoftPinSoapOut">
+    <wsdl:part name="parameters" element="tns:ReloadSoftPinResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePushNotificationIDSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePushNotificationID" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePushNotificationIDSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePushNotificationIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitBankInSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitBankIn" />
+  </wsdl:message>
+  <wsdl:message name="SubmitBankInSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitBankInResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitBankInBiCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitBankInBiCode" />
+  </wsdl:message>
+  <wsdl:message name="SubmitBankInBiCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitBankInBiCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitServiceRegistrationSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitServiceRegistration" />
+  </wsdl:message>
+  <wsdl:message name="SubmitServiceRegistrationSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitServiceRegistrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentServerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAgentServer" />
+  </wsdl:message>
+  <wsdl:message name="GetAgentServerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAgentServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetExChangeRateByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetExChangeRateById" />
+  </wsdl:message>
+  <wsdl:message name="GetExChangeRateByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetExChangeRateByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertMobileMoneymessageSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertMobileMoneymessage" />
+  </wsdl:message>
+  <wsdl:message name="InsertMobileMoneymessageSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertMobileMoneymessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPinTxByDNSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPinTxByDN" />
+  </wsdl:message>
+  <wsdl:message name="GetPinTxByDNSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPinTxByDNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDataToReloadSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDataToReload" />
+  </wsdl:message>
+  <wsdl:message name="GetDataToReloadSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDataToReloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDataReloadSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDataReload" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDataReloadSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDataReloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhatAppsInputSoapIn">
+    <wsdl:part name="parameters" element="tns:WhatAppsInput" />
+  </wsdl:message>
+  <wsdl:message name="WhatAppsInputSoapOut">
+    <wsdl:part name="parameters" element="tns:WhatAppsInputResponse" />
+  </wsdl:message>
+  <wsdl:message name="WhatAppsOutputSoapIn">
+    <wsdl:part name="parameters" element="tns:WhatAppsOutput" />
+  </wsdl:message>
+  <wsdl:message name="WhatAppsOutputSoapOut">
+    <wsdl:part name="parameters" element="tns:WhatAppsOutputResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBankInList" />
+  </wsdl:message>
+  <wsdl:message name="GetBankInListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBankInListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintCountSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePrintCount" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePrintCountSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePrintCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapIn">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="SendSMSSoapOut">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckBalanceExtraSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckBalanceExtra" />
+  </wsdl:message>
+  <wsdl:message name="CheckBalanceExtraSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckBalanceExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBalanceExtraSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBalanceExtra" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBalanceExtraSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBalanceExtraResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckProgramValiditySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckProgramValidity" />
+  </wsdl:message>
+  <wsdl:message name="CheckProgramValiditySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckProgramValidityResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClaimSRSPINServerSoapIn">
+    <wsdl:part name="parameters" element="tns:ClaimSRSPINServer" />
+  </wsdl:message>
+  <wsdl:message name="ClaimSRSPINServerSoapOut">
+    <wsdl:part name="parameters" element="tns:ClaimSRSPINServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessorInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProcessorInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetProcessorInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProcessorInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTxOutSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTxOut" />
+  </wsdl:message>
+  <wsdl:message name="GetTxOutSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTxOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageInfoListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessageInfoList" />
+  </wsdl:message>
+  <wsdl:message name="GetMessageInfoListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessageInfoListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ClientAPIServiceSoap">
+    <wsdl:operation name="RequestInput">
+      <wsdl:input message="tns:RequestInputSoapIn" />
+      <wsdl:output message="tns:RequestInputSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestTopup">
+      <wsdl:input message="tns:RequestTopupSoapIn" />
+      <wsdl:output message="tns:RequestTopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBalance">
+      <wsdl:input message="tns:CheckBalanceSoapIn" />
+      <wsdl:output message="tns:CheckBalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionStatus">
+      <wsdl:input message="tns:CheckTransactionStatusSoapIn" />
+      <wsdl:output message="tns:CheckTransactionStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionStatusBatch">
+      <wsdl:input message="tns:CheckTransactionStatusBatchSoapIn" />
+      <wsdl:output message="tns:CheckTransactionStatusBatchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestPIN">
+      <wsdl:input message="tns:RequestPINSoapIn" />
+      <wsdl:output message="tns:RequestPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <wsdl:input message="tns:GetProductSoapIn" />
+      <wsdl:output message="tns:GetProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductObject">
+      <wsdl:input message="tns:GetProductObjectSoapIn" />
+      <wsdl:output message="tns:GetProductObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentProductDiscount">
+      <wsdl:input message="tns:GetAgentProductDiscountSoapIn" />
+      <wsdl:output message="tns:GetAgentProductDiscountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentProductRebate">
+      <wsdl:input message="tns:GetAgentProductRebateSoapIn" />
+      <wsdl:output message="tns:GetAgentProductRebateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentTransaction">
+      <wsdl:input message="tns:GetRecentTransactionSoapIn" />
+      <wsdl:output message="tns:GetRecentTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceLogin">
+      <wsdl:input message="tns:DeviceLoginSoapIn" />
+      <wsdl:output message="tns:DeviceLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeviceVerifyTAC">
+      <wsdl:input message="tns:DeviceVerifyTACSoapIn" />
+      <wsdl:output message="tns:DeviceVerifyTACSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerStatus">
+      <wsdl:input message="tns:CheckCustomerStatusSoapIn" />
+      <wsdl:output message="tns:CheckCustomerStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerTxStatus">
+      <wsdl:input message="tns:CheckCustomerTxStatusSoapIn" />
+      <wsdl:output message="tns:CheckCustomerTxStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDealer">
+      <wsdl:input message="tns:RegisterDealerSoapIn" />
+      <wsdl:output message="tns:RegisterDealerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FBLogin">
+      <wsdl:input message="tns:FBLoginSoapIn" />
+      <wsdl:output message="tns:FBLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FBUpdateFBID">
+      <wsdl:input message="tns:FBUpdateFBIDSoapIn" />
+      <wsdl:output message="tns:FBUpdateFBIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FBUpdateMSISDN">
+      <wsdl:input message="tns:FBUpdateMSISDNSoapIn" />
+      <wsdl:output message="tns:FBUpdateMSISDNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInput">
+      <wsdl:input message="tns:CustomerInputSoapIn" />
+      <wsdl:output message="tns:CustomerInputSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInputList">
+      <wsdl:input message="tns:CustomerInputListSoapIn" />
+      <wsdl:output message="tns:CustomerInputListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInputApprove">
+      <wsdl:input message="tns:CustomerInputApproveSoapIn" />
+      <wsdl:output message="tns:CustomerInputApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSales">
+      <wsdl:input message="tns:GetAgentSalesSoapIn" />
+      <wsdl:output message="tns:GetAgentSalesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSalesProfit">
+      <wsdl:input message="tns:GetAgentSalesProfitSoapIn" />
+      <wsdl:output message="tns:GetAgentSalesProfitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageInfo">
+      <wsdl:input message="tns:GetMessageInfoSoapIn" />
+      <wsdl:output message="tns:GetMessageInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogLogin">
+      <wsdl:input message="tns:LogLoginSoapIn" />
+      <wsdl:output message="tns:LogLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReloadPIN">
+      <wsdl:input message="tns:GetReloadPINSoapIn" />
+      <wsdl:output message="tns:GetReloadPINSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReloadPINImmediate">
+      <wsdl:input message="tns:GetReloadPINImmediateSoapIn" />
+      <wsdl:output message="tns:GetReloadPINImmediateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintReceipt">
+      <wsdl:input message="tns:PrintReceiptSoapIn" />
+      <wsdl:output message="tns:PrintReceiptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoftPin">
+      <wsdl:input message="tns:CheckSoftPinSoapIn" />
+      <wsdl:output message="tns:CheckSoftPinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReloadSoftPin">
+      <wsdl:input message="tns:ReloadSoftPinSoapIn" />
+      <wsdl:output message="tns:ReloadSoftPinSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePushNotificationID">
+      <wsdl:input message="tns:UpdatePushNotificationIDSoapIn" />
+      <wsdl:output message="tns:UpdatePushNotificationIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitBankIn">
+      <wsdl:input message="tns:SubmitBankInSoapIn" />
+      <wsdl:output message="tns:SubmitBankInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitBankInBiCode">
+      <wsdl:input message="tns:SubmitBankInBiCodeSoapIn" />
+      <wsdl:output message="tns:SubmitBankInBiCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitServiceRegistration">
+      <wsdl:input message="tns:SubmitServiceRegistrationSoapIn" />
+      <wsdl:output message="tns:SubmitServiceRegistrationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentServer">
+      <wsdl:input message="tns:GetAgentServerSoapIn" />
+      <wsdl:output message="tns:GetAgentServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExChangeRateById">
+      <wsdl:input message="tns:GetExChangeRateByIdSoapIn" />
+      <wsdl:output message="tns:GetExChangeRateByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertMobileMoneymessage">
+      <wsdl:input message="tns:InsertMobileMoneymessageSoapIn" />
+      <wsdl:output message="tns:InsertMobileMoneymessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPinTxByDN">
+      <wsdl:input message="tns:GetPinTxByDNSoapIn" />
+      <wsdl:output message="tns:GetPinTxByDNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataToReload">
+      <wsdl:input message="tns:GetDataToReloadSoapIn" />
+      <wsdl:output message="tns:GetDataToReloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataReload">
+      <wsdl:input message="tns:UpdateDataReloadSoapIn" />
+      <wsdl:output message="tns:UpdateDataReloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhatAppsInput">
+      <wsdl:input message="tns:WhatAppsInputSoapIn" />
+      <wsdl:output message="tns:WhatAppsInputSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WhatAppsOutput">
+      <wsdl:input message="tns:WhatAppsOutputSoapIn" />
+      <wsdl:output message="tns:WhatAppsOutputSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInList">
+      <wsdl:input message="tns:GetBankInListSoapIn" />
+      <wsdl:output message="tns:GetBankInListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintCount">
+      <wsdl:input message="tns:UpdatePrintCountSoapIn" />
+      <wsdl:output message="tns:UpdatePrintCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input message="tns:SendSMSSoapIn" />
+      <wsdl:output message="tns:SendSMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckBalanceExtra">
+      <wsdl:input message="tns:CheckBalanceExtraSoapIn" />
+      <wsdl:output message="tns:CheckBalanceExtraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBalanceExtra">
+      <wsdl:input message="tns:UpdateBalanceExtraSoapIn" />
+      <wsdl:output message="tns:UpdateBalanceExtraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckProgramValidity">
+      <wsdl:input message="tns:CheckProgramValiditySoapIn" />
+      <wsdl:output message="tns:CheckProgramValiditySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClaimSRSPINServer">
+      <wsdl:input message="tns:ClaimSRSPINServerSoapIn" />
+      <wsdl:output message="tns:ClaimSRSPINServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessorInfo">
+      <wsdl:input message="tns:GetProcessorInfoSoapIn" />
+      <wsdl:output message="tns:GetProcessorInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTxOut">
+      <wsdl:input message="tns:GetTxOutSoapIn" />
+      <wsdl:output message="tns:GetTxOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageInfoList">
+      <wsdl:input message="tns:GetMessageInfoListSoapIn" />
+      <wsdl:output message="tns:GetMessageInfoListSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ClientAPIServiceSoap" type="tns:ClientAPIServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestInput">
+      <soap:operation soapAction="http://tempuri.org/RequestInput" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestTopup">
+      <soap:operation soapAction="http://tempuri.org/RequestTopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBalance">
+      <soap:operation soapAction="http://tempuri.org/CheckBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionStatus">
+      <soap:operation soapAction="http://tempuri.org/CheckTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionStatusBatch">
+      <soap:operation soapAction="http://tempuri.org/CheckTransactionStatusBatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestPIN">
+      <soap:operation soapAction="http://tempuri.org/RequestPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap:operation soapAction="http://tempuri.org/GetProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductObject">
+      <soap:operation soapAction="http://tempuri.org/GetProductObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentProductDiscount">
+      <soap:operation soapAction="http://tempuri.org/GetAgentProductDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentProductRebate">
+      <soap:operation soapAction="http://tempuri.org/GetAgentProductRebate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentTransaction">
+      <soap:operation soapAction="http://tempuri.org/GetRecentTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceLogin">
+      <soap:operation soapAction="http://tempuri.org/DeviceLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceVerifyTAC">
+      <soap:operation soapAction="http://tempuri.org/DeviceVerifyTAC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerStatus">
+      <soap:operation soapAction="http://tempuri.org/CheckCustomerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerTxStatus">
+      <soap:operation soapAction="http://tempuri.org/CheckCustomerTxStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDealer">
+      <soap:operation soapAction="http://tempuri.org/RegisterDealer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FBLogin">
+      <soap:operation soapAction="http://tempuri.org/FBLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FBUpdateFBID">
+      <soap:operation soapAction="http://tempuri.org/FBUpdateFBID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FBUpdateMSISDN">
+      <soap:operation soapAction="http://tempuri.org/FBUpdateMSISDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInput">
+      <soap:operation soapAction="http://tempuri.org/CustomerInput" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInputList">
+      <soap:operation soapAction="http://tempuri.org/CustomerInputList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInputApprove">
+      <soap:operation soapAction="http://tempuri.org/CustomerInputApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSales">
+      <soap:operation soapAction="http://tempuri.org/GetAgentSales" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSalesProfit">
+      <soap:operation soapAction="http://tempuri.org/GetAgentSalesProfit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageInfo">
+      <soap:operation soapAction="http://tempuri.org/GetMessageInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogLogin">
+      <soap:operation soapAction="http://tempuri.org/LogLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReloadPIN">
+      <soap:operation soapAction="http://tempuri.org/GetReloadPIN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReloadPINImmediate">
+      <soap:operation soapAction="http://tempuri.org/GetReloadPINImmediate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintReceipt">
+      <soap:operation soapAction="http://tempuri.org/PrintReceipt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoftPin">
+      <soap:operation soapAction="http://tempuri.org/CheckSoftPin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReloadSoftPin">
+      <soap:operation soapAction="http://tempuri.org/ReloadSoftPin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePushNotificationID">
+      <soap:operation soapAction="http://tempuri.org/UpdatePushNotificationID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitBankIn">
+      <soap:operation soapAction="http://tempuri.org/SubmitBankIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitBankInBiCode">
+      <soap:operation soapAction="http://tempuri.org/SubmitBankInBiCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitServiceRegistration">
+      <soap:operation soapAction="http://tempuri.org/SubmitServiceRegistration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentServer">
+      <soap:operation soapAction="http://tempuri.org/GetAgentServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExChangeRateById">
+      <soap:operation soapAction="http://tempuri.org/GetExChangeRateById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMobileMoneymessage">
+      <soap:operation soapAction="http://tempuri.org/InsertMobileMoneymessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPinTxByDN">
+      <soap:operation soapAction="http://tempuri.org/GetPinTxByDN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataToReload">
+      <soap:operation soapAction="http://tempuri.org/GetDataToReload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataReload">
+      <soap:operation soapAction="http://tempuri.org/UpdateDataReload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhatAppsInput">
+      <soap:operation soapAction="http://tempuri.org/WhatAppsInput" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhatAppsOutput">
+      <soap:operation soapAction="http://tempuri.org/WhatAppsOutput" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInList">
+      <soap:operation soapAction="http://tempuri.org/GetBankInList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintCount">
+      <soap:operation soapAction="http://tempuri.org/UpdatePrintCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBalanceExtra">
+      <soap:operation soapAction="http://tempuri.org/CheckBalanceExtra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBalanceExtra">
+      <soap:operation soapAction="http://tempuri.org/UpdateBalanceExtra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProgramValidity">
+      <soap:operation soapAction="http://tempuri.org/CheckProgramValidity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClaimSRSPINServer">
+      <soap:operation soapAction="http://tempuri.org/ClaimSRSPINServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessorInfo">
+      <soap:operation soapAction="http://tempuri.org/GetProcessorInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTxOut">
+      <soap:operation soapAction="http://tempuri.org/GetTxOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageInfoList">
+      <soap:operation soapAction="http://tempuri.org/GetMessageInfoList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ClientAPIServiceSoap12" type="tns:ClientAPIServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RequestInput">
+      <soap12:operation soapAction="http://tempuri.org/RequestInput" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestTopup">
+      <soap12:operation soapAction="http://tempuri.org/RequestTopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBalance">
+      <soap12:operation soapAction="http://tempuri.org/CheckBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionStatus">
+      <soap12:operation soapAction="http://tempuri.org/CheckTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionStatusBatch">
+      <soap12:operation soapAction="http://tempuri.org/CheckTransactionStatusBatch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestPIN">
+      <soap12:operation soapAction="http://tempuri.org/RequestPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProduct">
+      <soap12:operation soapAction="http://tempuri.org/GetProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductObject">
+      <soap12:operation soapAction="http://tempuri.org/GetProductObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentProductDiscount">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentProductDiscount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentProductRebate">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentProductRebate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecentTransaction">
+      <soap12:operation soapAction="http://tempuri.org/GetRecentTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceLogin">
+      <soap12:operation soapAction="http://tempuri.org/DeviceLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeviceVerifyTAC">
+      <soap12:operation soapAction="http://tempuri.org/DeviceVerifyTAC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerStatus">
+      <soap12:operation soapAction="http://tempuri.org/CheckCustomerStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCustomerTxStatus">
+      <soap12:operation soapAction="http://tempuri.org/CheckCustomerTxStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterDealer">
+      <soap12:operation soapAction="http://tempuri.org/RegisterDealer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FBLogin">
+      <soap12:operation soapAction="http://tempuri.org/FBLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FBUpdateFBID">
+      <soap12:operation soapAction="http://tempuri.org/FBUpdateFBID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FBUpdateMSISDN">
+      <soap12:operation soapAction="http://tempuri.org/FBUpdateMSISDN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInput">
+      <soap12:operation soapAction="http://tempuri.org/CustomerInput" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInputList">
+      <soap12:operation soapAction="http://tempuri.org/CustomerInputList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInputApprove">
+      <soap12:operation soapAction="http://tempuri.org/CustomerInputApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSales">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentSales" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentSalesProfit">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentSalesProfit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetMessageInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogLogin">
+      <soap12:operation soapAction="http://tempuri.org/LogLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReloadPIN">
+      <soap12:operation soapAction="http://tempuri.org/GetReloadPIN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReloadPINImmediate">
+      <soap12:operation soapAction="http://tempuri.org/GetReloadPINImmediate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintReceipt">
+      <soap12:operation soapAction="http://tempuri.org/PrintReceipt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckSoftPin">
+      <soap12:operation soapAction="http://tempuri.org/CheckSoftPin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReloadSoftPin">
+      <soap12:operation soapAction="http://tempuri.org/ReloadSoftPin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePushNotificationID">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePushNotificationID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitBankIn">
+      <soap12:operation soapAction="http://tempuri.org/SubmitBankIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitBankInBiCode">
+      <soap12:operation soapAction="http://tempuri.org/SubmitBankInBiCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitServiceRegistration">
+      <soap12:operation soapAction="http://tempuri.org/SubmitServiceRegistration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgentServer">
+      <soap12:operation soapAction="http://tempuri.org/GetAgentServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExChangeRateById">
+      <soap12:operation soapAction="http://tempuri.org/GetExChangeRateById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertMobileMoneymessage">
+      <soap12:operation soapAction="http://tempuri.org/InsertMobileMoneymessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPinTxByDN">
+      <soap12:operation soapAction="http://tempuri.org/GetPinTxByDN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataToReload">
+      <soap12:operation soapAction="http://tempuri.org/GetDataToReload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDataReload">
+      <soap12:operation soapAction="http://tempuri.org/UpdateDataReload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhatAppsInput">
+      <soap12:operation soapAction="http://tempuri.org/WhatAppsInput" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WhatAppsOutput">
+      <soap12:operation soapAction="http://tempuri.org/WhatAppsOutput" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBankInList">
+      <soap12:operation soapAction="http://tempuri.org/GetBankInList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePrintCount">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePrintCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <soap12:operation soapAction="http://tempuri.org/SendSMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckBalanceExtra">
+      <soap12:operation soapAction="http://tempuri.org/CheckBalanceExtra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBalanceExtra">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBalanceExtra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckProgramValidity">
+      <soap12:operation soapAction="http://tempuri.org/CheckProgramValidity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClaimSRSPINServer">
+      <soap12:operation soapAction="http://tempuri.org/ClaimSRSPINServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProcessorInfo">
+      <soap12:operation soapAction="http://tempuri.org/GetProcessorInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTxOut">
+      <soap12:operation soapAction="http://tempuri.org/GetTxOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageInfoList">
+      <soap12:operation soapAction="http://tempuri.org/GetMessageInfoList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ClientAPIService">
+    <wsdl:port name="ClientAPIServiceSoap" binding="tns:ClientAPIServiceSoap">
+      <soap:address location="http://reload.dyndns.org:8020/stagingapi/connect.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ClientAPIServiceSoap12" binding="tns:ClientAPIServiceSoap12">
+      <soap12:address location="http://reload.dyndns.org:8020/stagingapi/connect.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

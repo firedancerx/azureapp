@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "azureapp", "azureapp\azureapp.csproj", "{C57833E1-2D86-44DA-AA57-883A653BD4D1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "azureapp.Tests", "azureapp.Tests\azureapp.Tests.csproj", "{D6D7ABD5-5C2D-4840-9C05-708813DF03CC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRSServices", "SRSServices\SRSServices.csproj", "{3E4473D0-41D1-4879-BD14-A69344E27A27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C57833E1-2D86-44DA-AA57-883A653BD4D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C57833E1-2D86-44DA-AA57-883A653BD4D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C57833E1-2D86-44DA-AA57-883A653BD4D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C57833E1-2D86-44DA-AA57-883A653BD4D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6D7ABD5-5C2D-4840-9C05-708813DF03CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6D7ABD5-5C2D-4840-9C05-708813DF03CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6D7ABD5-5C2D-4840-9C05-708813DF03CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6D7ABD5-5C2D-4840-9C05-708813DF03CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E4473D0-41D1-4879-BD14-A69344E27A27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E4473D0-41D1-4879-BD14-A69344E27A27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E4473D0-41D1-4879-BD14-A69344E27A27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E4473D0-41D1-4879-BD14-A69344E27A27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
